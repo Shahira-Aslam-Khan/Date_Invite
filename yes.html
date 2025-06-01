@@ -1,35 +1,43 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Yes</title>
 <style>
-body {background-image:url("yes_back.jpg");}
-h1   {
-color: red;
-text-align: center;
-font-size: 70px
+body {
+    background-image: url("yes_back.jpg");
 }
-.happy{
-position:absolute;
-top:120px;
-left:120px;
-mix-blend-mode: multiply;
+h1 {
+    color: red;
+    text-align: center;
+    font-size: 70px;
 }
-form{
-position:absolute;
-top:220px;
-right:60px;
-font-size:50px;
-mix-blend-mode: multiply;
+.happy {
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    mix-blend-mode: multiply;
+}
+form {
+    position: absolute;
+    top: 220px;
+    right: 60px;
+    font-size: 50px;
+    mix-blend-mode: multiply;
 }
 </style>
 </head>
 <body>
+
 <img src="happy.jpg" class="happy" alt="happy" width="300" height="400">
-<h1><b><i>Thank you Mi Amor!</b></i></h1>
-<form action="action_page.html" action="mailto:mshawalam@gmail.com" method="GET">
-  <label for="date">Preferred date:</label>
-  <input type="date" id="Preferred_date" name="date_date">
-  <input type="submit">
+
+<h1><b><i>Thank you Mi Amor!</i></b></h1>
+
+<!-- Form to redirect to another page with the date passed in URL -->
+<form action="action_page.html" method="GET">
+  <label for="Preferred_date">Preferred date:</label>
+  <input type="date" id="Preferred_date" name="date_date" required>
+  <input type="submit" value="Submit">
 </form>
+
 </body>
 </html>
