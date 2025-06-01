@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-image: url("yes_back.jpg");
+}
+h1 {
+    color: red;
+    text-align: center;
+    font-size: 80px;
+}
+.smile {
+    position: absolute;
+    top: 280px;
+    left: 120px;
+    mix-blend-mode: multiply;
+}
+</style>
+</head>
+<body>
+
+<h1 id="dateMessage"><b>You have a date with me on ...</b></h1>
+<h1><b>Don't forget or you might not be alive to regret it</b></h1>
+
+<img src="sweet_smile.jpg" class="smile" alt="smile" width="300" height="400">
+
+<script>
+function getFormattedDate() {
+    const params = new URLSearchParams(window.location.search);
+    const dateStr = params.get("date_date");
+    if (!dateStr) return "an unknown date";
+
+    const date = new Date(dateStr);
+    if (isNaN(date)) return "an invalid date";
+
+    const options = { month: 'long', day: 'numeric', weekday: 'long' };
+    return date.toLocaleDateString(undefined, options); // Uses browser's locale
+}
+
+document.getElementById("dateMessage").innerHTML =
+    `<b>You have a date with me on ${getFormattedDate()}</b>`;
+</script>
+
+</body>
+</html>
